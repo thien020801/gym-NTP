@@ -1,0 +1,29 @@
+import { Routes } from '@angular/router';
+import { SignInComponent } from './pages/sign-in/sign-in.component';
+import { SignUpComponent } from './pages/sign-up/sign-up.component';
+import { CustomersComponent } from './pages/customers/customers.component';
+import { HomeComponent } from './pages/home/home.component';
+import { PTComponent } from './pages/pt/pt.component';
+import { RevenueComponent } from './pages/revenue/revenue.component';
+import { CreateCustomerComponent } from './pages/create-customer/create-customer.component';
+import { EmployeeComponent } from './pages/employee/employee.component';
+import { MonthPakcageComponent } from './pages/month-pakcage/month-pakcage.component';
+import { SessionPackageComponent } from './pages/session-package/session-package.component';
+import { AttendanceComponent } from './pages/attendance/attendance.component';
+import { AddPackageComponent } from './pages/add-package/add-package.component';
+
+export const routes: Routes = [
+  { path: '', component: HomeComponent },
+  { path: 'employees', component: EmployeeComponent },
+  { path: 'signIn', component: SignInComponent },
+  { path: 'signUp', component: SignUpComponent },
+  { path: 'home', component: HomeComponent },
+  { path: 'customers', component: CustomersComponent },
+  { path: 'pt', component: PTComponent },
+  { path: 'monthPackages', component: MonthPakcageComponent },
+  { path: 'sessionPackages', component: SessionPackageComponent },
+  { path: 'revenue', component: RevenueComponent },
+  { path: 'createCus', component: CreateCustomerComponent },
+  { path: 'attendance', component: AttendanceComponent },
+  { path: 'addPackage', component: AddPackageComponent },
+];

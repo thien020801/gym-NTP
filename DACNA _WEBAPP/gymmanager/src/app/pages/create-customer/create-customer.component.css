@@ -1,0 +1,85 @@
+.create-account {
+    height: calc(100vh - 85px);
+    width: calc(100% - 15%);
+    float: right; 
+  }
+  
+  .sign-up-header {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .sign-up-header h1 {
+    margin-bottom: 10px;
+  }
+  
+  .sign-up-header img {
+    width: 50px; 
+    height: 50px;
+    border-radius: 50%;
+  }
+  
+  .form-group {
+    margin-bottom: 15px;
+  }
+  
+  .form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+  }
+  
+  .form-group input,
+  .form-group select {
+    width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  .form-group .error {
+    color: red;
+    font-size: 0.875em;
+    margin-top: 5px;
+  }
+  
+  button {
+    width: 100%;
+    padding: 12px; /* Điều chỉnh padding để nút lớn hơn */
+    border: none;
+    border-radius: 5px;
+    background-color: #007bff;
+    color: white;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background-color 0.3s ease; /* Thêm hiệu ứng khi hover */
+  }
+  
+  button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed; /* Thay đổi cursor khi nút bị vô hiệu hóa */
+  }
+  
+  button:hover {
+    background-color: #0056b3; /* Thay đổi màu khi hover */
+  }
+  
+  .already-have-account {
+    text-align: center; /* Canh giữa nội dung */
+    margin-top: 20px; /* Khoảng cách với nút Sign Up */
+  }
+  
+  .already-have-account p {
+    margin: 0; /* Loại bỏ khoảng cách giữa các đoạn văn bản */
+  }
+  
+  .already-have-account a {
+    color: #007bff; /* Màu văn bản của liên kết */
+    text-decoration: none; /* Loại bỏ gạch chân */
+  }
+  
+  .already-have-account a:hover {
+    text-decoration: underline; /* Gạch chân khi di chuột qua */
+  }
+  

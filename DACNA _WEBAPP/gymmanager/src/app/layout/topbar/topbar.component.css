@@ -1,0 +1,48 @@
+.top-bar {
+  background: linear-gradient(135deg, #1a1a1a, #333333);
+  width: 85%;
+  height: 85px;
+  float: right;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 24px; /* Adjusted font size for better layout */
+  color: white;
+  position: relative;
+  justify-content: center;
+  font-weight: bold;
+}
+
+.logo {
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.user {
+  display: flex;
+  align-items: center;
+  font-weight: normal;
+  font-size: 20px;
+  position: absolute;
+  right: 20px;
+}
+
+.user div {
+  margin-right: 10px; /* Added margin for spacing between text and button */
+}
+
+.user button {
+  background: #ff4d4d; /* Custom button color */
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 5px 10px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.user button:hover {
+  background: #e60000; /* Darker shade for hover effect */
+}

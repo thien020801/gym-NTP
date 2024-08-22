@@ -1,0 +1,9 @@
+<div class="top-bar">
+  <!-- <img class="logo" src="../../../assets/images/NTPlogo.jpg" /> -->
+  <div>GYM NTP - GYM MANAGEMENT SYSTEM</div>
+  <div class="user">
+    <div *ngIf="!displayName"></div>
+    <div *ngIf="displayName">Chào bạn {{ displayName }}</div>
+    <!-- <button *ngIf="displayName" (click)="Logout()">Đăng xuất</button> -->
+  </div>
+</div>

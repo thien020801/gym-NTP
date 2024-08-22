@@ -1,0 +1,142 @@
+<app-sidebar></app-sidebar>
+<app-topbar></app-topbar>
+<div class="create-account">
+  <div class="sign-up-container">
+    <form [formGroup]="signUpForm" (ngSubmit)="onSubmit()">
+      <div class="sign-up-header">
+        <h1>Create Employee Account</h1>
+      </div>
+
+      <div class="form-group">
+        <label for="EmName">Full Name</label>
+        <input id="fullName" type="text" formControlName="EmName" />
+        <div
+          *ngIf="
+            signUpForm.get('EmName')?.invalid &&
+            signUpForm.get('EmName')?.touched
+          "
+          class="error"
+        >
+          <div *ngIf="signUpForm.get('CusName')?.errors?.['required']">
+            Full Name is required.
+          </div>
+          <div *ngIf="signUpForm.get('CusName')?.errors?.['pattern']">
+            Invalid name format. Full Name should only contain letters.
+          </div>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="Password">Password</label>
+        <input id="password" type="password" formControlName="Password" />
+        <div
+          *ngIf="
+            signUpForm.get('Password')?.invalid &&
+            signUpForm.get('Password')?.touched
+          "
+          class="error"
+        >
+          <div *ngIf="signUpForm.get('Password')?.errors?.['required']">
+            Password is required.
+          </div>
+          <div *ngIf="signUpForm.get('Password')?.errors?.['minlength']">
+            Password must be at least 6 characters long.
+          </div>
+          <div *ngIf="signUpForm.get('Password')?.errors?.['pattern']">
+            Password must contain at least one uppercase letter and one number.
+          </div>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="PhoneNumber">Phone Number</label>
+        <input id="phoneNumber" type="text" formControlName="PhoneNumber" />
+        <div
+          *ngIf="
+            signUpForm.get('PhoneNumber')?.invalid &&
+            signUpForm.get('PhoneNumber')?.touched
+          "
+          class="error"
+        >
+          <div *ngIf="signUpForm.get('PhoneNumber')?.errors?.['required']">
+            Valid phone number is required.
+          </div>
+          <div *ngIf="signUpForm.get('PhoneNumber')?.errors?.['pattern']">
+            Invalid phone number format.
+          </div>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="Email">Email</label>
+        <input id="email" type="email" formControlName="Email" />
+        <div
+          *ngIf="
+            signUpForm.get('Email')?.invalid && signUpForm.get('Email')?.touched
+          "
+          class="error"
+        >
+          Valid email is required.
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="Address">Address</label>
+        <input id="address" type="text" formControlName="Address" />
+        <div
+          *ngIf="
+            signUpForm.get('Address')?.invalid &&
+            signUpForm.get('Address')?.touched
+          "
+          class="error"
+        >
+          Address is required.
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="DateOfBirth">Date of Birth</label>
+        <input id="dob" type="date" formControlName="DateOfBirth" />
+        <div
+          *ngIf="
+            signUpForm.get('DateOfBirth')?.invalid &&
+            signUpForm.get('DateOfBirth')?.touched
+          "
+          class="error"
+        >
+          <div *ngIf="signUpForm.get('DateOfBirth')?.errors?.['required']">
+            Date of Birth is required.
+          </div>
+          <div *ngIf="signUpForm.get('DateOfBirth')?.errors?.['invalidAge']">
+            You must be at least 18 years old to sign up.
+          </div>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="Gender">Gender</label>
+        <select id="gender" formControlName="Gender">
+          <option value="" disabled>Select Gender</option>
+          <option value="male">Male</option>
+          <option value="female">Female</option>
+        </select>
+        <div
+          *ngIf="
+            signUpForm.get('Gender')?.invalid &&
+            signUpForm.get('Gender')?.touched
+          "
+          class="error"
+        >
+          Gender is required.
+        </div>
+      </div>
+
+      <button type="submit" [disabled]="signUpForm.invalid">Create</button>
+
+      <!-- Thông báo tạo tài khoản thành công -->
+      <div *ngIf="successMessage" class="success-message">
+        {{ successMessage }}
+      </div>
+    </form>
+  </div>
+</div>

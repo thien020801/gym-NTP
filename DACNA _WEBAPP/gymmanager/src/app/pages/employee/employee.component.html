@@ -1,0 +1,56 @@
+<app-sidebar></app-sidebar>
+<app-topbar></app-topbar>
+<div class="employee-table">
+  <table>
+    <thead>
+      <tr>
+        <th>Employee ID</th>
+        <th>Employee Name</th>
+        <th>Email</th>
+        <th>Phone Number</th>
+        <th>Address</th>
+        <th>DOB</th>
+        <th>Gender</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let employee of employeesList | paginate : config">
+        <td>{{ employee.EmployeeID }}</td>
+        <td>{{ employee.EmName }}</td>
+        <td>{{ employee.Email }}</td>
+        <td>{{ employee.PhoneNumber }}</td>
+        <td>{{ employee.Address }}</td>
+        <td>{{ employee.DateOfBirth | date : "yyyy-MM-dd" }}</td>
+        <td>{{ employee.Gender }}</td>
+        <td>
+          <!-- <button class="edit-button" (click)="editEmployee(employee)"><i class="fas fa-edit"></i>Edit</button> -->
+          <button
+            class="delete-button"
+            (click)="confirmDelete(employee.EmployeeID)"
+          >
+            <i class="fas fa-trash"></i> Delete
+          </button>
+        </td>
+      </tr>
+      <!-- Form chỉnh sửa -->
+      <!-- <tr *ngIf="showEditForm && selectedEmployee">
+        <td>{{ selectedEmployee.EmployeeID }}</td>
+        <td><input type="text" [(ngModel)]="selectedEmployee.EmName"></td>
+        <td><input type="email" [(ngModel)]="selectedEmployee.Email"></td>
+        <td><input type="text" [(ngModel)]="selectedEmployee.PhoneNumber"></td>
+        <td><input type="text" [(ngModel)]="selectedEmployee.Address"></td>
+        <td><input type="date" [(ngModel)]="selectedEmployee.DateOfBirth"></td>
+        <td><input type="text" [(ngModel)]="selectedEmployee.Gender"></td>
+        <td>
+          <button class="save-button" (click)="saveChanges()">Save</button>
+          <button class="cancel-button" (click)="cancelEdit()">Cancel</button>
+        </td>
+      </tr> -->
+    </tbody>
+  </table>
+  <pagination-controls
+    class="pag-control"
+    (pageChange)="pageChanged($event)"
+  ></pagination-controls>
+</div>

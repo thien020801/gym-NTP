@@ -1,0 +1,53 @@
+.customer-table {
+  width: calc(100% - 15%);
+  float: right;
+}
+
+.customer-table table {
+  width: 100%;
+  border-collapse: collapse;
+  height: calc(100vh - 150px); /* Adjusted to provide space for pagination */
+}
+
+.customer-table th,
+.customer-table td {
+  padding: 8px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+.customer-table th {
+  background-color: #f2f2f2;
+}
+
+.delete-button {
+  background-color: #dc3545;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-left: 5px;
+}
+
+.delete-button:hover {
+  background-color: #c82333;
+}
+
+.edit-button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.edit-button:hover {
+  background-color: #0056b3;
+}
+
+.pag-control {
+  margin-top: 15px; /* Space between table and pagination controls */
+  text-align: center; /* Center align pagination controls */
+}

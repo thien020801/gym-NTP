@@ -1,0 +1,53 @@
+<app-sidebar></app-sidebar>
+<app-topbar></app-topbar>
+<div class="monthPackage-table">
+  <table>
+    <thead>
+      <tr>
+        <th>Month Package ID</th>
+        <th>Package Name</th>
+        <th>Cost(USD)</th>
+        <th>Duration(Month)</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let monthpackage of monthPackageList | paginate : config; let i = index">
+        <td>{{ monthpackage.MonthlySubscriptionID }}</td>
+        <td>{{ monthpackage.Name }}</td>
+        <td>{{ monthpackage.Cost }}</td>
+        <td>{{ monthpackage.Duration }}</td>
+        <td>
+          <button class="edit-button" (click)="startEdit(i)"><i class="fas fa-edit"></i>Edit</button>
+          <button class="delete-button" (click)="confirmDelete(monthpackage.MonthlySubscriptionID)">
+            <i class="fas fa-trash"></i> Delete
+          </button>
+        </td>
+      </tr>
+      <!-- Row for editing an existing subscription -->
+      <tr *ngIf="editingIndex !== null">
+        <td>{{ editedSubscription.MonthlySubscriptionID }}</td>
+        <td><input [(ngModel)]="editedSubscription.Name" placeholder="Name"></td>
+        <td><input [(ngModel)]="editedSubscription.Cost" placeholder="Cost" type="number"></td>
+        <td><input [(ngModel)]="editedSubscription.Duration" placeholder="Duration" type="number"></td>
+        <td>
+          <button class="save-button" (click)="saveEditedSubscription()">Save</button>
+          <button class="cancel-button" (click)="cancelEdit()">Cancel</button>
+        </td>
+      </tr>
+      <!-- Row for adding a new subscription -->
+      <tr *ngIf="addingNew">
+        <td></td>
+        <td><input [(ngModel)]="newSubscription.Name" placeholder="Name"></td>
+        <td><input [(ngModel)]="newSubscription.Cost" placeholder="Cost" type="number"></td>
+        <td><input [(ngModel)]="newSubscription.Duration" placeholder="Duration" type="number"></td>
+        <td>
+          <button class="save-button" (click)="saveNewSubscription()">Save</button>
+          <button class="cancel-button" (click)="cancelAdd()">Cancel</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <button class="add-button" (click)="startAdd()">Add</button>
+  <pagination-controls class="pag-control" (pageChange)="pageChanged($event)"></pagination-controls>
+</div>

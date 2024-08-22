@@ -1,0 +1,24 @@
+<app-sidebar></app-sidebar>
+<app-topbar></app-topbar>
+<div class="container">
+  <h2>Attendance Check-In</h2>
+  <div class="form-group">
+      <label for="phoneNumber">Phone Number:</label>
+
+      <input id="phoneNumber" [(ngModel)]="phoneNumber" placeholder="Enter phone number" class="form-control" />
+      <button (click)="getCustomerDetails()" class="btn btn-primary">Get Customer Details</button>
+  </div>
+
+  <div *ngIf="customer" class="customer-details">
+      <h3>Customer Details</h3>
+      <p><strong>Image:</strong> {{ customer?.Image }}</p> 
+      <p><strong>CustomerID:</strong> {{ customer?.CustomerID }}</p> 
+      <p><strong>Name:</strong> {{ customer?.CusName }}</p> 
+      <p><strong>Phone Number:</strong> {{ customer?.PhoneNumber }}</p> 
+      <button (click)="checkInCustomer()" class="btn btn-success">Check In</button>
+  </div>
+
+  <div *ngIf="message" class="message">
+      <p>{{ message }}</p>
+  </div>
+</div>

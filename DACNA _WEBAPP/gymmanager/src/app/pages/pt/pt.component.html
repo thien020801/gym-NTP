@@ -1,0 +1,43 @@
+<app-sidebar></app-sidebar>
+<app-topbar></app-topbar>
+<div class="trainer-table">
+  <table>
+    <thead>
+      <tr>
+        <th>PT ID</th>
+        <th>Image</th>
+        <th>PT Name</th>
+        <th>Phone Number</th>
+        <th>Address</th>
+        <th>Email</th>
+        <th>DOB</th>
+        <th>Gender</th>
+        <th>Salary</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let trainers of trainersList | paginate : config">
+        <td>{{ trainers.TrainerID }}</td>
+        <td>{{ trainers.Image }}</td>
+        <td>{{ trainers.TrainerName }}</td>
+        <td>{{ trainers.PhoneNumber }}</td>
+        <td>{{ trainers.Address }}</td>
+        <td>{{ trainers.Email }}</td>
+        <td>{{ trainers.DateOfBirth | date:'yyyy-MM-dd' }}</td>
+        <td>{{ trainers.Gender }}</td>
+        <td>{{ trainers.Salary }}</td>
+        <td>
+          <!-- <button class="edit-button"><i class="fas fa-edit"></i>Edit</button> -->
+          <button
+            class="delete-button"
+            (click)="confirmDelete(trainers.TrainerID)"
+          >
+            <i class="fas fa-trash"></i> Delete
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <pagination-controls class="pag-control" (pageChange)="pageChanged($event)"></pagination-controls>
+</div>
